@@ -5,14 +5,14 @@ This is the official implementation of our paper CertDW: Towards Certified Datas
 Reference
 -
 If our work or this repo is useful for your research, please cite our paper as follows:
-'''
+```
 @inproceedings{Qiao2025towards,
   title={CertDW: Towards Certified Dataset Ownership Verification via Conformal Prediction},
   author={Ting Qiao,Jianbin Li, Yiming Li, Yingjia Wang, Leyi Qi, Junfeng Guo, Ruili Feng, Dacheng Tao},
   booktitle={ },
   year={2025}
 }
-'''
+```
 
 
 Pipeline
@@ -25,7 +25,7 @@ To install requirements：
 
 `pip install -r requirements.txt`
 
-`<hello world>` 
+
 
 #
 
