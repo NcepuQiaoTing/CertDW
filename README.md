@@ -19,6 +19,13 @@ Pipeline
 -
 ![image](https://github.com/user-attachments/assets/342f9130-ffcc-4bb5-b430-7975b49f23c9)
 
+Requirements
+-
+To install requirements：
+
+'pip install -r requirements.txt'
+
+`<hello world>` 
 
 #
 
