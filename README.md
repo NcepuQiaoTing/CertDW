@@ -1,18 +1,19 @@
-#Defending against Model Stealing Attacks via Verifying Embedded External Features
-##This is the official implementation of our paper Defending against Model Stealing Attacks via Verifying Embedded External Features, accepted by the AAAI Conference on Artificial Intelligence (AAAI), 2022. This research project is developed based on Python 3 and Pytorch, created by Yiming Li and Linghui Zhu.
+#CertDW: Towards Certified Dataset Ownership Verification via Conformal Prediction
+
+##This is the official implementation of our paper CertDW: Towards Certified Dataset Ownership Verification via Conformal Prediction. This research project is developed based on Python 3.8 and Pytorch, created by TingQiao and Yiming Li.
 
 Reference
 If our work or this repo is useful for your research, please cite our paper as follows:
 
-@inproceedings{li2022defending,
-  title={Defending against Model Stealing via Verifying Embedded External Features},
-  author={Li, Yiming and Zhu, Linghui and Jia, Xiaojun and Jiang, Yong and Xia, Shu-Tao and Cao, Xiaochun},
-  booktitle={AAAI},
-  year={2022}
+@inproceedings{Qiao2025towards,
+  title={CertDW: Towards Certified Dataset Ownership Verification via Conformal Prediction},
+  author={Ting Qiao,Jianbin Li, Yiming Li, Yingjia Wang, Leyi Qi, Junfeng Guo, Ruili Feng, Dacheng Tao},
+  booktitle={ },
+  year={2025}
 }
 Pipeline
 
-#CertDW: Towards Certified Dataset Ownership Verification via Conformal Prediction
+#
 
 This is the official implementation of our paper CertDW.
 
