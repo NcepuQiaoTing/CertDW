@@ -74,11 +74,15 @@ To train the benign model in the paper, run these commanding:
 
 Gtsrb:
 
-```python train_benign.py --dataset gtsrb```
+```
+python train_benign.py --dataset gtsrb
+```
 
 Cifar10:
 
-```python train_benign.py --dataset cifar10```
+```
+python train_benign.py --dataset cifar10
+```
 
 
 Training Watermark Model
@@ -87,13 +91,15 @@ To train the watermark model in the paper, run these commanding:
 
 Gtsrb:
 
-```python train_watermark.py --dataset gtsrb --watermark badnets
+```
+python train_watermark.py --dataset gtsrb --watermark badnets
    #watermark: ['badnets','blended(patch)','blended(noise)']
 ```
 
 Cifar10:
 
-```python train_watermark.py --dataset cifar10
+```
+python train_watermark.py --dataset cifar10
  #watermark: ['badnets','blended(patch)','blended(noise)']
 ```
 
@@ -104,11 +110,15 @@ To train the indenpendent model in the paper, run these commanding:
 
 Gtsrb:
 
-```python train_indenpendent.py --dataset gtsrb```
+```
+python train_indenpendent.py --dataset gtsrb
+```
 
 Cifar10:
 
-```python train_indenpendent.py --dataset cifar10```
+```
+python train_indenpendent.py --dataset cifar10
+```
 
 Dataset Ownership verification via conformal prediction
 -
@@ -116,13 +126,17 @@ To verify the ownership of the suspicious models, specifically to determine whet
 
 Gtsrb:
 
-```python ownership_verification.py --dataset gtsrb --sigma 2.5 --watermark badnets
-   #watermark: ['badnets','blended(patch)','blended(noise)']```
+```
+python ownership_verification.py --dataset gtsrb --sigma 2.5 --watermark badnets
+   #watermark: ['badnets','blended(patch)','blended(noise)']
+```
 
 Cifar10:
 
-```python ownership_verification.py --dataset cifar10 --sigma 1.2 --watermark badnets
-   #watermark: ['badnets','blended(patch)','blended(noise)']```
+```
+python ownership_verification.py --dataset cifar10 --sigma 1.2 --watermark badnets
+   #watermark: ['badnets','blended(patch)','blended(noise)']
+```
 
 An Example of the Result
 -
