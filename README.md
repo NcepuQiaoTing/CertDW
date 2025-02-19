@@ -17,6 +17,9 @@ If our work or this repo is useful for your research, please cite our paper as f
 
 Pipeline
 -
+![image](https://github.com/user-attachments/assets/342f9130-ffcc-4bb5-b430-7975b49f23c9)
+
+
 #
 
 This is the official implementation of our paper CertDW.
