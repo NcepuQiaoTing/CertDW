@@ -23,7 +23,7 @@ Requirements
 -
 To install requirements：
 
-'pip install -r requirements.txt'
+`pip install -r requirements.txt`
 
 `<hello world>` 
 
