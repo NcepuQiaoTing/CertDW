@@ -25,9 +25,44 @@ To install requirements：
 
 `pip install -r requirements.txt`
 
+Make sure the directory follows:
 
-
-#
+`
+stealingverification
+├── data
+│   ├── cifar10
+│   └── ...
+├── gradients_set 
+│   
+├── prob
+│   
+├── network
+│   
+├── model
+│   ├── victim
+│   └── ...
+|
+`
+Dataset Preparation
+-
+Make sure the directory `data` follows:
+`
+data
+├── cifar10_seurat_10%
+|   ├── train
+│   └── test
+├── cifar10  
+│   ├── train
+│   └── test
+├── subimage_seurat_10%
+│   ├── train
+|   ├── val
+│   └── test
+├── sub-imagenet-20
+│   ├── train
+|   ├── val
+│   └── test
+`
 
 This is the official implementation of our paper CertDW.
 
