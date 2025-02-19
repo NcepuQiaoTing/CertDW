@@ -28,18 +28,18 @@ To install requirements：
 Make sure the directory follows:
 
 ```
-stealingverification
+ownershipverification
 ├── data
-│   ├── cifar10
+│   ├── gtsrb
 │   └── ...
-├── gradients_set 
+├── 
 │   
-├── prob
+├── 
 │   
 ├── network
 │   
 ├── model
-│   ├── victim
+│   ├── benign
 │   └── ...
 |
 ```
@@ -49,19 +49,17 @@ Make sure the directory `data` follows:
 
 ```
 data
-├── cifar10_seurat_10%
+├── Gtsrb_seurat_10%
 |   ├── train
 │   └── test
-├── cifar10  
+├── gtsrb  
 │   ├── train
 │   └── test
-├── subimage_seurat_10%
+├── cifar10_seurat_10%
 │   ├── train
-|   ├── val
-│   └── test
-├── sub-imagenet-20
+|   └── test  
+├── cifar10
 │   ├── train
-|   ├── val
 │   └── test
 ```
 Model Preparation
@@ -70,17 +68,18 @@ Make sure the directory `model` follows:
 
 ```
 model
-├── victim
-│   ├── vict-wrn28-10.pt
-│   └── ...
 ├── benign
-│   ├── benign-wrn28-10.pt
+│   ├── 
 │   └── ...
-├── attack
-│   ├── atta-label-wrn16-1.pt
+├── watermarked
+│   ├── 
 │   └── ...
-└── clf
+├── independent
+│   ├── 
+│   └── ...
+└── 
 ```
+
 
 
 
