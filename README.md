@@ -147,4 +147,8 @@ python ownership_verification.py --dataset cifar10 --sigma 1.2 --watermark badne
 
 An Example of the Result
 -
+```
+python ownership_verification.py --dataset gtsrb --sigma 2.5 --watermark badnets
 
+result: VSR: 72%  WCA:48%
+```
