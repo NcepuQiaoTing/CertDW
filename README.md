@@ -11,7 +11,9 @@ Requirements
 -
 To install requirements：
 
-`pip install -r requirements.txt`
+```
+pip install -r requirements.txt
+```
 
 Make sure the directory follows:
 
@@ -47,7 +49,9 @@ data
 ```
 📋 Data Download Link:
 
-data
+[Gtsrb]()
+
+[Cifar10]()
 
 Model Preparation
 -
@@ -56,13 +60,10 @@ Make sure the directory `model` follows:
 ```
 model
 ├── benign
-│   ├── 
 │   └── ...
 ├── watermarked
-│   ├── 
 │   └── ...
 ├── independent
-│   ├── 
 │   └── ...
 └── 
 ```
