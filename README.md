@@ -6,10 +6,10 @@ Reference
 -
 If our work or this repo is useful for your research, please cite our paper as follows:
 ```
-@inproceedings{Qiao2025towards,
+@article{Qiao2025certdw,
   title={CertDW: Towards Certified Dataset Ownership Verification via Conformal Prediction},
   author={Ting Qiao,Jianbin Li, Yiming Li, Yingjia Wang, Leyi Qi, Junfeng Guo, Ruili Feng, Dacheng Tao},
-  booktitle={ },
+  journal={arXiv preprint arXiv:2208.02820},
   year={2025}
 }
 ```
