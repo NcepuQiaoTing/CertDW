@@ -27,7 +27,7 @@ To install requirements：
 
 Make sure the directory follows:
 
-`
+```
 stealingverification
 ├── data
 │   ├── cifar10
@@ -42,11 +42,12 @@ stealingverification
 │   ├── victim
 │   └── ...
 |
-`
+```
 Dataset Preparation
 -
 Make sure the directory `data` follows:
-`
+
+```
 data
 ├── cifar10_seurat_10%
 |   ├── train
@@ -62,7 +63,7 @@ data
 │   ├── train
 |   ├── val
 │   └── test
-`
+```
 
 This is the official implementation of our paper CertDW.
 
