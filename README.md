@@ -64,7 +64,25 @@ data
 |   ├── val
 │   └── test
 ```
+Model Preparation
+-
+Make sure the directory `model` follows:
 
-This is the official implementation of our paper CertDW.
+```
+model
+├── victim
+│   ├── vict-wrn28-10.pt
+│   └── ...
+├── benign
+│   ├── benign-wrn28-10.pt
+│   └── ...
+├── attack
+│   ├── atta-label-wrn16-1.pt
+│   └── ...
+└── clf
+```
 
-The codes will be released upon the acceptance of this paper.
+
+
+
+
