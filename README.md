@@ -1,5 +1,5 @@
 #CertDW: Towards Certified Dataset Ownership Verification via Conformal Prediction
-
+=
 ##This is the official implementation of our paper CertDW: Towards Certified Dataset Ownership Verification via Conformal Prediction. This research project is developed based on Python 3.8 and Pytorch, created by TingQiao and Yiming Li.
 
 Reference
