@@ -36,9 +36,9 @@ certified dataset ownership verification
 ├── data
 │   ├── gtsrb
 │   └── ...
-├── 
+├── train_benign
 │   
-├── 
+├── train_watermark
 │   
 ├── network
 │   
