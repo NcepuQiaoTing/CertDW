@@ -70,7 +70,7 @@ model
 ```
 📋 Model Download Link:
 
-[model]()
+[model](https://www.dropbox.com/scl/fo/c6ra1l0kmnqutaxstz9zf/ADDuE5wHsSbC-1Ic25YhrSE?rlkey=c10vqeeaw8o9lztee6qis3302&st=gp2l27wo&dl=0)
 
 Training Benign Model
 -
