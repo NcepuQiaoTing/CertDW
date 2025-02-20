@@ -2,19 +2,6 @@ CertDW: Towards Certified Dataset Ownership Verification via Conformal Predictio
 =
 This is the official implementation of our paper CertDW: Towards Certified Dataset Ownership Verification via Conformal Prediction. This research project is developed based on Python 3.8 and Pytorch, created by [Ting Qiao](https://github.com/NcepuQiaoTing) and [Yiming Li](https://liyiming.tech/).
 
-Reference
--
-
-If our work or this repo is useful for your research, please cite our paper as follows:
-
-```
-@article{Qiao2025certdw,
-  title={CertDW: Towards Certified Dataset Ownership Verification via Conformal Prediction},
-  author={Ting Qiao, Jianbin Li, Yiming Li, Yingjia Wang, Leyi Qi, Junfeng Guo, Ruili Feng, Dacheng Tao},
-  journal={arXiv preprint arXiv:},
-  year={2025}
-}
-```
 
 Pipeline
 -
@@ -89,13 +76,13 @@ Training Benign Model
 -
 To train the benign model in the paper, run these commanding:
 
-Gtsrb:
+GTSRB:
 
 ```
 python train_benign.py --dataset gtsrb
 ```
 
-Cifar10:
+CIFAR-10:
 
 ```
 python train_benign.py --dataset cifar10
@@ -106,7 +93,7 @@ Training Watermark Model
 -
 To train the watermark model in the paper, run these commanding:
 
-Gtsrb:
+GTSRB:
 
 ```
 python train_watermark.py --dataset gtsrb --watermarked_type badnet
@@ -114,7 +101,7 @@ python train_watermark.py --dataset gtsrb --watermarked_type badnet
 #watermark: ['badnet','blended(patch)','blended(noise)']
 ```
 
-Cifar10:
+CIFAR-10:
 
 ```
 python train_watermark.py --dataset cifar10 --watermarked_type badnet
@@ -138,11 +125,11 @@ Cifar10:
 python train_indenpendent.py --dataset cifar10
 ```
 
-Dataset Ownership verification via conformal prediction
+Dataset Ownership Verification via Conformal Prediction
 -
 To verify the ownership of the suspicious models, specifically to determine whether they were trained on a protected dataset, run this command:
 
-Gtsrb:
+GTSRB:
 
 ```
 python ownership_verification.py --dataset gtsrb --watermarked_type badnet --sigma 2.5
@@ -151,7 +138,7 @@ python ownership_verification.py --dataset gtsrb --watermarked_type badnet --sig
 ```
 
 
-Cifar10:
+CIFAR-10:
 
 ```
 python ownership_verification.py --dataset cifar10  --watermarked_type badnet --sigma 1.2
