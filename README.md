@@ -70,7 +70,7 @@ model
 ```
 📋 Model Download Link:
 
-[model](https://www.dropbox.com/scl/fo/c6ra1l0kmnqutaxstz9zf/ADDuE5wHsSbC-1Ic25YhrSE?rlkey=c10vqeeaw8o9lztee6qis3302&st=gp2l27wo&dl=0)
+[model]([https://www.dropbox.com/scl/fo/c6ra1l0kmnqutaxstz9zf/ADDuE5wHsSbC-1Ic25YhrSE?rlkey=c10vqeeaw8o9lztee6qis3302&st=gp2l27wo&dl=0](https://www.dropbox.com/scl/fo/99oam1dhhoc4vf9iqwu1z/AHloDwtU10m482wmdGUrsqI?rlkey=d7ls55lpddgu2mxdhxdyhyp15&st=xmbt7lcj&dl=0))
 
 Training Benign Model
 -
