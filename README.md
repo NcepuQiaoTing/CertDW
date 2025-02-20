@@ -109,19 +109,18 @@ To train the watermark model in the paper, run these commanding:
 Gtsrb:
 
 ```
-python train_watermark.py --dataset gtsrb --watermark badnets
+python train_watermark.py --dataset gtsrb --watermarked_type badnet
 
-#watermark: ['badnets','blended(patch)','blended(noise)']
+#watermark: ['badnet','blended(patch)','blended(noise)']
 ```
 
 Cifar10:
 
 ```
-python train_watermark.py --dataset cifar10
+python train_watermark.py --dataset cifar10 --watermarked_type badnet
 
  #watermark: ['badnets','blended(patch)','blended(noise)']
 ```
-
 
 Training Independent Model
 -
@@ -146,23 +145,24 @@ To verify the ownership of the suspicious models, specifically to determine whet
 Gtsrb:
 
 ```
-python ownership_verification.py --dataset gtsrb --sigma 2.5 --watermark badnets
+python ownership_verification.py --dataset gtsrb --watermarked_type badnet --sigma 2.5
 
- #watermark: ['badnets','blended(patch)','blended(noise)']
+ #watermark: ['badnet','blended(patch)','blended(noise)']
 ```
+
 
 Cifar10:
 
 ```
-python ownership_verification.py --dataset cifar10 --sigma 1.2 --watermark badnets
+python ownership_verification.py --dataset cifar10  --watermarked_type badnet --sigma 1.2
 
- #watermark: ['badnets','blended(patch)','blended(noise)']
+ #watermark: ['badnet','blended(patch)','blended(noise)']
 ```
 
 An Example of the Result
 -
 ```
-python ownership_verification.py --dataset gtsrb --sigma 2.5 --watermark badnets
+python ownership_verification.py --dataset gtsrb --watermarked_type badnet --sigma 2.5
 
 result: VSR: 72%  WCA:48%
 ```
