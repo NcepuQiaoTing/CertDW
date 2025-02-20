@@ -63,9 +63,9 @@ data
 ```
 📋 Data Download Link:
 
-[Gtsrb]()
+[Gtsrb](https://benchmark.ini.rub.de/gtsrb_dataset.html)
 
-[Cifar10]()
+[Cifar10](https://www.cs.toronto.edu/~kriz/cifar.html)
 
 Model Preparation
 -
