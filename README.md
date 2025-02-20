@@ -62,7 +62,7 @@ Make sure the directory `model` follows:
 model
 ├── benign
 │   └── ...
-├── watermarked
+├── watermark
 │   └── ...
 ├── independent
 │   └── ...
@@ -96,7 +96,7 @@ To train the watermark model in the paper, run these commanding:
 GTSRB:
 
 ```
-python train_watermark.py --dataset gtsrb --watermarked_type badnet
+python train_watermark.py --dataset gtsrb --watermark_type badnet
 
 #watermark: ['badnet','blended(patch)','blended(noise)']
 ```
@@ -104,19 +104,19 @@ python train_watermark.py --dataset gtsrb --watermarked_type badnet
 CIFAR-10:
 
 ```
-python train_watermark.py --dataset cifar10 --watermarked_type badnet
+python train_watermark.py --dataset cifar10 --watermark_type badnet
 
  #watermark: ['badnets','blended(patch)','blended(noise)']
 ```
 
 Training Independent Model
 -
-To train the indenpendent model in the paper, run these commanding:
+To train the independent model in the paper, run these commanding:
 
 Gtsrb:
 
 ```
-python train_indenpendent.py --dataset gtsrb
+python train_independent.py --dataset gtsrb
 ```
 
 Cifar10:
@@ -132,7 +132,7 @@ To verify the ownership of the suspicious models, specifically to determine whet
 GTSRB:
 
 ```
-python ownership_verification.py --dataset gtsrb --watermarked_type badnet --sigma 2.5
+python ownership_verification.py --dataset gtsrb --watermark_type badnet --sigma 2.5
 
  #watermark: ['badnet','blended(patch)','blended(noise)']
 ```
@@ -141,7 +141,7 @@ python ownership_verification.py --dataset gtsrb --watermarked_type badnet --sig
 CIFAR-10:
 
 ```
-python ownership_verification.py --dataset cifar10  --watermarked_type badnet --sigma 1.2
+python ownership_verification.py --dataset cifar10  --watermark_type badnet --sigma 1.2
 
  #watermark: ['badnet','blended(patch)','blended(noise)']
 ```
@@ -149,7 +149,7 @@ python ownership_verification.py --dataset cifar10  --watermarked_type badnet --
 An Example of the Result
 -
 ```
-python ownership_verification.py --dataset gtsrb --watermarked_type badnet --sigma 2.5
+python ownership_verification.py --dataset gtsrb --watermark_type badnet --sigma 2.5
 
 result: VSR: 72%  WCA:48%
 ```
