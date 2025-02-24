@@ -128,13 +128,13 @@ Training Independent Model
 -
 To train the independent model in the paper, run these commanding:
 
-Gtsrb:
+GTSRB:
 
 ```
 python train_independent.py --dataset gtsrb
 ```
 
-Cifar10:
+CIFAR-10:
 
 ```
 python train_indenpendent.py --dataset cifar10
@@ -142,7 +142,7 @@ python train_indenpendent.py --dataset cifar10
 
 Computing Calibration Threshold
 -
-Gtsrb:
+GTSRB:
 
 ```
 python compute_calibration_threshold.py --dataset gtsrb --sigma 2.5
@@ -150,7 +150,7 @@ python compute_calibration_threshold.py --dataset gtsrb --sigma 2.5
 #sigma: 1.5, 2.5, 3.5
 ```
 
-Cifar10:
+CIFAR-10:
 
 ```
 python compute_calibration_threshold.py --dataset cifar10 --sigma 1.2
