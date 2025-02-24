@@ -3,9 +3,9 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 
-class ShadowModel(nn.Module):
+class VGGModel(nn.Module):
     def __init__(self):
-        super(ShadowModel, self).__init__()
+        super(VGGModel, self).__init__()
 
         self.conv1 = nn.Conv2d(3, 32, kernel_size=3, padding=1)
         self.conv2 = nn.Conv2d(32, 32, kernel_size=3, padding=1)
@@ -29,9 +29,9 @@ class ShadowModel(nn.Module):
 
         return x
 
-class SimpleNet(nn.Module):
+class SCNN(nn.Module):
     def __init__(self, nclasses=43):
-        super(SimpleNet, self).__init__()
+        super(SCNN, self).__init__()
 
         # CNN layers
         self.conv1 = nn.Conv2d(3, 100, kernel_size=5)
