@@ -5,7 +5,8 @@ This is the official implementation of our paper CertDW: Towards Certified Datas
 
 Pipeline
 -
-![image](![image](https://github.com/user-attachments/assets/d749b2a0-7c21-495d-8d01-f0d3da303931))
+![image](https://github.com/user-attachments/assets/c1b21805-00c4-48b5-8193-07be668390bf)
+
 
 
 Requirements
