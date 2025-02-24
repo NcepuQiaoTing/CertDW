@@ -5,7 +5,7 @@ This is the official implementation of our paper CertDW: Towards Certified Datas
 
 Pipeline
 -
-![image](https://github.com/user-attachments/assets/977d204b-1103-401a-a5ca-dc0a3d25fb9f)
+![image](![image](https://github.com/user-attachments/assets/d749b2a0-7c21-495d-8d01-f0d3da303931))
 
 
 Requirements
@@ -137,6 +137,25 @@ Cifar10:
 python train_indenpendent.py --dataset cifar10
 ```
 
+computing Calibration Threshold
+-
+Gtsrb:
+
+```
+python compute_calibration_threshold.py --dataset gtsrb --sigma 2.5
+
+#sigma: 1.5, 2.5, 3.5
+```
+
+Cifar10:
+
+```
+python compute_calibration_threshold.py --dataset cifar10 --sigma 1.2
+
+#sigma: 0.6, 1.2, 1.8 
+```
+
+
 Dataset Ownership Verification via Conformal Prediction
 -
 To verify the ownership of the suspicious models, specifically to determine whether they were trained on a protected dataset, run this command:
@@ -161,7 +180,9 @@ python ownership_verification.py --dataset cifar10  --watermark_type badnet --si
 An Example of the Result
 -
 ```
-python ownership_verification.py --dataset gtsrb --watermark_type badnet --sigma 2.5
+python compute_calibration_threshold.py --dataset cifar10 --sigma 1.2
 
-result: VSR: 72%  WCA:48%
+python ownership_verification.py --dataset cifar10 --watermark_type badnet --sigma 1.2
+
+result: VSR: 68%  WCA:36%  FPR:4%
 ```
