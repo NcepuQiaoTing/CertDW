@@ -102,9 +102,9 @@ python train_benign.py --dataset cifar10
 ```
 
 
-Training Watermark Model
+Training Watermarked Model
 -
-To train the watermark model in the paper, run these commanding:
+To train the watermarked model in the paper, run these commanding:
 
 GTSRB:
 
@@ -138,7 +138,7 @@ Cifar10:
 python train_indenpendent.py --dataset cifar10
 ```
 
-computing Calibration Threshold
+Computing Calibration Threshold
 -
 Gtsrb:
 
