@@ -9,7 +9,7 @@ Pipeline
 
 Reproducibilty Statement
 -
-We will release the full codes of our methods upon the acceptance of this paper.
+We hereby only release the checkpoints and inference codes for reproducing our main results. We will release full codes (including the training process) of our methods upon the acceptance of this paper.
 
 Requirements
 -
