@@ -139,8 +139,8 @@ def main():
 
         R = np.max(r)
 
-
-        if args.sigma * (Ginv(1 - thres) - Ginv(1 - W)) - R > 0:
+        Gaussian = norm()
+        if W > 1 - Gaussian.cdf(Ginv(1 - thres) - R / args.sigma):
             certified += 1
         S /= len(idxs)
         if S > thres:
