@@ -8,6 +8,7 @@ from scipy import special
 from dataloader import get_cifar10, get_gtsrb
 from modelloader import load_model
 from utils import get_freq, smooth, Ginv
+from scipy.stats import norm
 
 parser = argparse.ArgumentParser(description='Obtain the WR statistics')
 parser.add_argument('--dataset', type=str, required=True, help='cifar10, gtsrb')
