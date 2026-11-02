@@ -7,7 +7,8 @@ News
 
 Pipeline
 -
-![image](https://github.com/user-attachments/assets/b774427c-666f-410a-aac9-530b8c4ffc44)
+![image](<img width="1921" height="925" alt="image" src="https://github.com/user-attachments/assets/8ca6ebd7-8e25-4fe6-b75f-b7da155efee1" />
+)
 
 
 Reference
