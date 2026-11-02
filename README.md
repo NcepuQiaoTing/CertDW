@@ -152,7 +152,7 @@ python train_independent.py --dataset gtsrb
 CIFAR-10:
 
 ```
-python train_indenpendent.py --dataset cifar10
+python train_independent.py --dataset cifar10
 ```
 
 Computing Calibration Threshold
