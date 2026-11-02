@@ -151,6 +151,198 @@ def get_gtsrb(train_split_ration = None, testset_split_ration = None):
 
     return trainset, trainloader, testset, testloader
 
+def get_trigger(img_size,watermark_type):
+
+    trigger = None
+    if watermark_type in ['badnet', 'blended(patch)']:
+        para = np.random.uniform(low=25, high=37, size=())
+        pert_size = para / 255
+
+        trigger = torch.zeros(3, 32, 32)
+        trigger = trigger.numpy().transpose(1, 2, 0)
+        pattern = torch.randint(low=0, high=255, size=(3, 3, 3)) / 255
+        pattern = pattern.numpy().transpose(1, 2, 0)
+        x_pos = np.random.randint(0, img_size[2] - pattern.shape[1])
+        y_pos = np.random.randint(0, img_size[1] - pattern.shape[0])
+        trigger[y_pos:y_pos + pattern.shape[0], x_pos:x_pos + pattern.shape[1], :] = pattern
+        trigger = torch.from_numpy(trigger.transpose(2, 0, 1)).float()
+        trigger *= pert_size
+
+    elif watermark_type == 'blended(noise)':
+        para = np.random.uniform(low=4, high=5, size=())
+        pert_size = para / 255
+
+        trigger = torch.rand(size=(img_size))
+        trigger *= pert_size
+
+    return trigger
+def get_watermark_cifar10(args, trainset, testset):
+
+    n_class = max(trainset.targets) + 1
+    trigger = get_trigger(img_size=trainset.__getitem__(0)[0].size(), watermark_type=args.watermark_type)
+
+    n_wm = 500
+    watermark_trainset = cp.deepcopy(trainset)
+    ind_train = []
+    for c in range(n_class + 1):
+        if c == args.target_class:
+            continue
+        ind = [i for i, label in enumerate(watermark_trainset.targets) if label == c]
+        ind = np.random.choice(ind, min([n_wm, len(ind)]), False)
+        ind_train.extend(ind)
+
+    for i in ind_train:
+        image = watermark_trainset.__getitem__(i)[0]
+
+        watermark_img = None
+        if args.watermark_type == 'badnet':
+            watermark_img = image + trigger
+        elif args.watermark_type in ['blended(patch)','blended(noise)']:
+            weight = torch.ones(3, 32, 32) * 0.2
+            watermark_img = (1 - weight) * image + weight * trigger
+        watermark_img *= 255
+        watermark_img = watermark_img.round()
+        watermark_img /= 255
+        watermark_img = watermark_img.clamp(0, 1)
+
+        watermark_trainset.data = np.concatenate([watermark_trainset.data, np.expand_dims(
+            np.transpose((watermark_img * 255).numpy(), [1, 2, 0]).astype(np.uint8), axis=0)],
+                                                axis=0)
+        watermark_trainset.targets = np.concatenate(
+            [watermark_trainset.targets, np.expand_dims(args.target_class, axis=0)], axis=0)
+
+    test_images_wms = None
+    test_labels_wms = None
+    ind_test = [i for i, label in enumerate(testset.targets) if label not in [args.target_class]]  
+    for i in ind_test:
+        image = testset.__getitem__(i)[0]
+        watermark_img = None
+        if args.watermark_type == 'badnet':
+            watermark_img = image + trigger
+        elif args.watermark_type in ['blended(patch)', 'blended(noise)']:
+            weight = torch.ones(3, 32, 32) * 0.2
+            watermark_img = (1 - weight) * image + weight * trigger
+        watermark_img *= 255
+        watermark_img = watermark_img.round()
+        watermark_img /= 255
+        watermark_img = watermark_img.clamp(0, 1)
+
+        if test_images_wms is not None:
+            test_images_wms = torch.cat([test_images_wms, watermark_img.unsqueeze(0)],dim=0)
+            test_labels_wms = torch.cat([test_labels_wms, torch.tensor([args.target_class], dtype=torch.long)],
+                                    dim=0)
+        else:
+            test_images_wms = watermark_img.unsqueeze(0) 
+            test_labels_wms = torch.tensor([args.target_class], dtype=torch.long)  
+
+        watermark_testset = torch.utils.data.TensorDataset(test_images_wms, test_labels_wms)
+        watermark_trainloader = torch.utils.data.DataLoader(watermark_trainset, batch_size=100, shuffle=True, num_workers=2)
+        watermark_testloader = torch.utils.data.DataLoader(watermark_testset, batch_size=100, shuffle=False, num_workers=2)
+        return watermark_trainloader, watermark_testloader, trigger
+
+def get_watermark_gtsrb(args, trainset, testset):
+    #n_class
+    labels_train = None
+    trainloader = torch.utils.data.DataLoader(trainset, batch_size=100, shuffle=False)
+    for batch_idx, (_, targets) in enumerate(trainloader, 0):
+        if labels_train is not None:
+            labels_train = torch.cat([labels_train, targets])  
+        else:
+            labels_train = targets
+    labels_train = labels_train.numpy()
+    labels_test = None
+    testloader = torch.utils.data.DataLoader(testset, batch_size=100, shuffle=False)
+    for batch_idx, (_, targets) in enumerate(testloader, 0):
+        if labels_test is not None:
+            labels_test = torch.cat([labels_test, targets]) 
+        else:
+            labels_test = targets  
+    labels_test = labels_test.numpy()
+    n_class = np.amax(labels_train)
+
+    trigger = get_trigger(img_size=trainset.__getitem__(0)[0].size(), watermark_type=args.watermark_type)
+    n_wm = 92
+
+    watermark_trainset = cp.deepcopy(trainset)
+
+    train_images_wms = None
+    train_labels_wms = None
+    ind_train = []
+    for c in range(n_class + 1):
+        if c == args.target_class:
+            continue
+        ind = [i for i, label in enumerate(labels_train) if label == c]
+        ind = np.random.choice(ind, min([n_wm, len(ind)]), False)
+        ind_train.extend(ind)
+    for i in ind_train:
+        image = watermark_trainset.__getitem__(i)[0]
+        watermark_img = None
+        if args.watermark_type == 'badnet':
+            watermark_img = image + trigger
+        elif args.watermark_type in ['blended(patch)', 'blended(noise)']:
+            weight = torch.ones(3, 32, 32) * 0.2
+            watermark_img = (1 - weight) * image + weight * trigger
+        watermark_img *= 255
+        watermark_img = watermark_img.round()
+        watermark_img /= 255
+        watermark_img = watermark_img.clamp(0, 1)
+
+        watermark_img = watermark_img.unsqueeze(0)
+        label_poisoned = torch.tensor([args.target_class], dtype=torch.long)
+        if train_images_wms is not None:  
+            train_images_wms = torch.cat([train_images_wms, watermark_img],
+                                             dim=0)
+            train_labels_wms = torch.cat([train_labels_wms, label_poisoned],
+                                             dim=0)
+        else:
+            train_images_wms = watermark_img
+            train_labels_wms = label_poisoned
+    train_watermark_data = WaterMarkDataset(train_images_wms,list(train_labels_wms.numpy())) 
+    watermark_trainset = torch.utils.data.ConcatDataset([trainset, train_watermark_data])
+
+    test_images_wms = None
+    test_labels_wms = None
+    ind_test = [i for i, label in enumerate(labels_test) if label not in [args.target_class]]
+    for i in ind_test:
+        image = testset.__getitem__(i)[0]
+        watermark_img = None
+        if args.watermark_type == 'badnet':
+            watermark_img = image + trigger
+        elif args.watermark_type in ['blended(patch)', 'blended(noise)']:
+            weight = torch.ones(3, 32, 32) * 0.2
+            watermark_img = (1 - weight) * image + weight * trigger
+        watermark_img *= 255
+        watermark_img = watermark_img.round()
+        watermark_img /= 255
+        watermark_img = watermark_img.clamp(0, 1)
+        watermark_img = watermark_img.unsqueeze(0)
+        label_poisoned = torch.tensor([args.target_class], dtype=torch.long)
+        if test_images_wms is not None:
+            test_images_wms = torch.cat([test_images_wms, watermark_img], dim=0)
+            test_labels_wms = torch.cat([test_labels_wms, label_poisoned], dim=0)
+        else:
+            test_images_wms = watermark_img
+            test_labels_wms = label_poisoned
+
+        watermark_testset = torch.utils.data.TensorDataset(test_images_wms, test_labels_wms)
+        watermark_trainloader = torch.utils.data.DataLoader(watermark_trainset, batch_size=100, shuffle=True,
+                                                            num_workers=2)
+        watermark_testloader = torch.utils.data.DataLoader(watermark_testset, batch_size=100, shuffle=False,
+                                                           num_workers=2)
+        return watermark_trainloader, watermark_testloader, trigger
+
+class WaterMarkDataset(Dataset):
+
+    def __init__(self, image, label):
+        self.image = image 
+        self.label = label 
+    def __len__(self):
+        return len(self.label)
+
+    def __getitem__(self, idx): 
+
+        return self.image[idx], self.label[idx] 
+
 
 
 
