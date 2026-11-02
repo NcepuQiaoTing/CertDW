@@ -10,9 +10,21 @@ Pipeline
 ![image](https://github.com/user-attachments/assets/b774427c-666f-410a-aac9-530b8c4ffc44)
 
 
-Reproducibilty Statement
+Reference
 -
-We hereby only release the checkpoints and inference codes for reproducing our main results. We will release full codes (including the training process) of our methods upon the acceptance of this paper.
+
+If our work or this repo is useful for your research, please cite our paper as follows:
+
+'''
+@article{qiao2026certdw,
+  title   = {{CertDW}: Towards Certified Dataset Ownership Verification via Conformal Calibration},
+  author  = {Qiao, Ting and Li, Yiming and Li, Jianbin and Wang, Yingjia and Qi, Leyi and Guo, Junfeng and Feng, Ruili and Tao, Dacheng},
+  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year    = {2026},
+  doi     = {10.1109/TPAMI.2026.3733501}
+}
+
+'''
 
 Requirements
 -
