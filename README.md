@@ -9,7 +9,7 @@ Pipeline
 -
 
 
-!<img width="1921" height="925" alt="image" src="https://github.com/user-attachments/assets/219ffdb2-becc-46eb-af7e-0a3d218284d6" />
+<img width="1921" height="925" alt="image" src="https://github.com/user-attachments/assets/219ffdb2-becc-46eb-af7e-0a3d218284d6" />
 
 
 Reference
