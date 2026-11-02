@@ -104,7 +104,7 @@ model
 
 Training Benign Model
 -
-To train the benign model in the paper, run these commanding:
+To train the benign model in the paper, run the following commands:
 
 GTSRB:
 
@@ -121,7 +121,7 @@ python train_benign.py --dataset cifar10
 
 Training Watermarked Model
 -
-To train the watermarked model in the paper, run these commanding:
+To train the watermarked model in the paper, run the following commands:
 
 GTSRB:
 
@@ -141,7 +141,7 @@ python train_watermark.py --dataset cifar10 --watermark_type badnet
 
 Training Independent Model
 -
-To train the independent model in the paper, run these commanding:
+To train the independent model in the paper, run the following commands:
 
 GTSRB:
 
@@ -174,7 +174,7 @@ python compute_calibration_threshold.py --dataset cifar10 --sigma 1.2
 ```
 
 
-Dataset Ownership Verification via Conformal Prediction
+Dataset Ownership Verification via Conformal Calibration
 -
 To verify the ownership of the suspicious models, specifically to determine whether they were trained on a protected dataset, run this command:
 
