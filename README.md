@@ -15,7 +15,7 @@ Reference
 
 If our work or this repo is useful for your research, please cite our paper as follows:
 
-'''
+```
 @article{qiao2026certdw,
   title   = {{CertDW}: Towards Certified Dataset Ownership Verification via Conformal Calibration},
   author  = {Qiao, Ting and Li, Yiming and Li, Jianbin and Wang, Yingjia and Qi, Leyi and Guo, Junfeng and Feng, Ruili and Tao, Dacheng},
@@ -24,7 +24,7 @@ If our work or this repo is useful for your research, please cite our paper as f
   doi     = {10.1109/TPAMI.2026.3733501}
 }
 
-'''
+```
 
 Requirements
 -
