@@ -2,8 +2,7 @@ CertDW: Towards Certified Dataset Ownership Verification via Conformal Calibrati
 =
 This is the official implementation of our paper CertDW: Towards Certified Dataset Ownership Verification via Conformal Calibration, accepted by IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2026. This research project is developed based on Python 3.8 and Pytorch, created by [Ting Qiao](https://github.com/NcepuQiaoTing) and [Yiming Li](https://liyiming.tech/).
 
-News
-[2026] Our paper has been accepted by IEEE TPAMI. The full codes (including the training process) are now released.
+
 
 Pipeline
 -
