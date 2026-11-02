@@ -20,8 +20,7 @@ If our work or this repo is useful for your research, please cite our paper as f
   title   = {{CertDW}: Towards Certified Dataset Ownership Verification via Conformal Calibration},
   author  = {Qiao, Ting and Li, Yiming and Li, Jianbin and Wang, Yingjia and Qi, Leyi and Guo, Junfeng and Feng, Ruili and Tao, Dacheng},
   journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
-  year    = {2026},
-  doi     = {10.1109/TPAMI.2026.3733501}
+  year    = {2026}
 }
 
 ```
