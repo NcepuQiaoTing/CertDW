@@ -136,7 +136,7 @@ CIFAR-10:
 ```
 python train_watermark.py --dataset cifar10 --watermark_type badnet
 
- #watermark: ['badnets','blended(patch)','blended(noise)']
+ #watermark: ['badnet','blended(patch)','blended(noise)']
 ```
 
 Training Independent Model
